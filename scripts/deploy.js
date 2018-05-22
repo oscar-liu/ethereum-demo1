@@ -8,7 +8,8 @@ const { interface ,bytecode } = require(contractPath);
 
 //2. 配置 provider
 const provider = new HDWalletProvider(
-  'style trim couch clean between famous shy dragon traffic taste manage swallow',
+	//这里填写你的助词词
+  '',
   'https://rinkeby.infura.io/I7r6w00gwpmet92gbkAY'
 	);
 
