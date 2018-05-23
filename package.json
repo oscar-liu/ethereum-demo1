@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile" : "node scripts/compile.js",
+    "pretest" : "npm run compile",
+    "predeploy" : "npm run compile",
+    "deploy": "node scripts/deploy.js",
+    "test": "mocha tests/"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +18,8 @@
     "solc": "^0.4.24",
     "truffle-hdwallet-provider": "0.0.3",
     "web3": "1.0.0-beta.34"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }

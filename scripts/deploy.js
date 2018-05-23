@@ -8,13 +8,21 @@ const { interface ,bytecode } = require(contractPath);
 
 //2. 配置 provider
 const provider = new HDWalletProvider(
-	//这里填写你的助词词
-  '',
+	//这里填写你的助词
+  'style trim couch clean between famous shy dragon traffic taste manage swallow',
   'https://rinkeby.infura.io/I7r6w00gwpmet92gbkAY'
 	);
 
 // 3. 初始化 web3 实例
-const web3 = new Web3(provider);
+// const web3 = new Web3(provider);
+
+//3.1 内部私有链测试
+if (typeof web3 !== 'undefined') {
+  web3 = new Web3(web3.currentProvider);
+} else {
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+}
+
 
 (async () => {
     // 4. 获取钱包里面的账户
